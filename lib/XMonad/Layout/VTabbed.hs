@@ -78,7 +78,7 @@ instance Eq a => DecorationStyle VTabbedDecoration a where
     decorationEventHook _ _ _ = return ()
 
     pureDecoration (VTabbed size) _ ht _ s wrs (w,r@(Rectangle x y wh hh))
-        = Just $ (Rectangle x ny (fi size) (fi ht), Rectangle (x + fi size) y (wh - fi size) hh)
+        = Just $ (Rectangle (x + fi size) y (wh - fi size) hh, Rectangle 0 (fi ny) (fi size) ht)
         where ws = filter (`elem` map fst (filter ((==r) . snd) wrs)) (S.integrate s)
               loc i = y + fi (ht * (fi i))
               ny  = maybe y loc $ w `elemIndex` ws
