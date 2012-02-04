@@ -1,0 +1,10 @@
+Config { font = "xft:Terminus:bold:size=12"
+       , bgColor = "#000000" -- "#3d47ff"
+       , fgColor = "#d3d3d3" -- "#ffffff"
+       , border = FullBM 0
+       , borderColor = "#d3d3d3" -- "#ffffff"
+       , position = Bottom
+       , commands = [ Run StdinReader ]
+       , alignSep = "}{"
+       , template = "%StdinReader% "
+       }
